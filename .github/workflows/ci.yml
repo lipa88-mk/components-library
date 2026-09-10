@@ -1,0 +1,67 @@
+name: CI
+
+on:
+    pull_request:
+    push:
+        branches: [main]
+
+permissions:
+    contents: read
+
+# Newer pushes to the same PR / branch supersede in-flight runs.
+concurrency:
+    group: ci-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    verify:
+        runs-on: ubuntu-latest
+        env:
+            # Unit tests don't need the puppeteer browser (that's the separate
+            # Docker visual-test flow); skip the ~150 MB Chrome download on npm ci.
+            PUPPETEER_SKIP_DOWNLOAD: 'true'
+            PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
+            HUSKY: '0' # skip "prepare": "husky" during npm ci in CI
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v5
+
+            - name: Set up Node
+              uses: actions/setup-node@v5
+              with:
+                  node-version-file: .nvmrc # pins Node 20, same as local dev
+                  cache: npm
+
+            - name: Install dependencies
+              run: npm ci
+
+            # Every check below runs even if an earlier one failed, so a PR
+            # surfaces all problems in one go. The job still fails if any did.
+            - name: Lint
+              if: ${{ !cancelled() }}
+              run: npm run lint
+
+            - name: Typecheck
+              if: ${{ !cancelled() }}
+              run: npm run typecheck
+
+            - name: Format check
+              if: ${{ !cancelled() }}
+              run: npm run format:check
+
+            - name: Design tokens are up to date
+              if: ${{ !cancelled() }}
+              run: |
+                  npm run tokens
+                  git diff --exit-code -- src/assets/css src/theming || {
+                      echo "::error::Generated token files are stale — run 'npm run tokens' and commit the result.";
+                      exit 1;
+                  }
+
+            - name: Build library
+              if: ${{ !cancelled() }}
+              run: npm run build
+
+            - name: Unit tests
+              if: ${{ !cancelled() }}
+              run: npm run test:ci
