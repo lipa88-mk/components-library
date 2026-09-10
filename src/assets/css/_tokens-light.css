@@ -1,0 +1,354 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root[data-theme="light"], :root[data-theme="light"] [data-theme-override] {
+  --sd-fg-default: color-mix(in srgb, var(--sd-base-neutral), black calc(var(--sd-modifier-990) * 100%));
+  --sd-fg-soft: var(--sd-base-neutral);
+  --sd-fg-muted: color-mix(in srgb, var(--sd-base-neutral), white calc(var(--sd-modifier-200) * 100%));
+  --sd-fg-disabled: color-mix(in srgb, var(--sd-base-neutral), transparent calc(0.5 * 100%));
+  --sd-bg-page: var(--sd-base-white);
+  --sd-bg-surface1: color-mix(in srgb, var(--sd-base-neutral), white calc(1 * 100%));
+  --sd-bg-surface2: color-mix(in srgb, var(--sd-base-neutral), white calc(var(--sd-modifier-10) * 100%));
+  --sd-bg-surface3: color-mix(in srgb, var(--sd-base-neutral), white calc(var(--sd-modifier-25) * 100%));
+  --sd-bg-surface4: color-mix(in srgb, var(--sd-base-neutral), white calc(var(--sd-modifier-50) * 100%));
+  --sd-bg-surface5: color-mix(in srgb, var(--sd-base-neutral), white calc(var(--sd-modifier-100) * 100%));
+  --sd-bg-disabled: color-mix(in srgb, var(--sd-base-neutral), transparent calc(0.9 * 100%));
+  --sd-border-default: color-mix(in srgb, var(--sd-base-neutral), transparent calc(0.5 * 100%));
+  --sd-border-soft: color-mix(in srgb, var(--sd-base-neutral), transparent calc(0.75 * 100%));
+  --sd-border-muted: color-mix(in srgb, var(--sd-base-neutral), white calc(var(--sd-modifier-200) * 100%));
+  --sd-accent-container-muted: color-mix(in srgb, var(--sd-base-accent), white calc(var(--sd-modifier-10) * 100%));
+  --sd-accent-container-soft: color-mix(in srgb, var(--sd-base-accent), white calc(var(--sd-modifier-25) * 100%));
+  --sd-accent-container-default: color-mix(in srgb, var(--sd-base-accent), white calc(var(--sd-modifier-50) * 100%));
+  --sd-accent-container-hover: color-mix(in srgb, var(--sd-base-accent), white calc(var(--sd-modifier-75) * 100%));
+  --sd-accent-container-active: color-mix(in srgb, var(--sd-base-accent), white calc(var(--sd-modifier-100) * 100%));
+  --sd-accent-muted: color-mix(in srgb, var(--sd-base-accent), white calc(var(--sd-modifier-200) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-accent-bg-300: color-mix(in srgb, var(--sd-base-accent), white calc(var(--sd-modifier-300) * 100%));
+  --sd-accent-soft: color-mix(in srgb, var(--sd-base-accent), white calc(var(--sd-modifier-400) * 100%));
+  --sd-accent-default: var(--sd-base-accent);
+  --sd-accent-hover: color-mix(in srgb, var(--sd-base-accent), black calc(var(--sd-modifier-600) * 100%));
+  --sd-accent-fg-650: color-mix(in srgb, var(--sd-base-accent), black calc(var(--sd-modifier-650) * 100%));
+  --sd-accent-active: color-mix(in srgb, var(--sd-base-accent), black calc(var(--sd-modifier-700) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-accent-fg-800: color-mix(in srgb, var(--sd-base-accent), black calc(var(--sd-modifier-800) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-accent-fg-900: color-mix(in srgb, var(--sd-base-accent), black calc(var(--sd-modifier-900) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-accent-fg-925: color-mix(in srgb, var(--sd-base-accent), black calc(var(--sd-modifier-925) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-accent-fg-950: color-mix(in srgb, var(--sd-base-accent), black calc(var(--sd-modifier-950) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-accent-fg-990: color-mix(in srgb, var(--sd-base-accent), black calc(var(--sd-modifier-990) * 100%));
+  --sd-accent-on-accent: var(--sd-base-white);
+  --sd-accent-on-container: var(--sd-base-accent);
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-accent-container-fixed: color-mix(in srgb, var(--sd-base-accent), white calc(var(--sd-modifier-25) * 100%));
+  --sd-danger-container-muted: color-mix(in srgb, var(--sd-base-danger), white calc(var(--sd-modifier-10) * 100%));
+  --sd-danger-container-soft: color-mix(in srgb, var(--sd-base-danger), white calc(var(--sd-modifier-25) * 100%));
+  --sd-danger-container-default: color-mix(in srgb, var(--sd-base-danger), white calc(var(--sd-modifier-50) * 100%));
+  --sd-danger-container-hover: color-mix(in srgb, var(--sd-base-danger), white calc(var(--sd-modifier-75) * 100%));
+  --sd-danger-container-active: color-mix(in srgb, var(--sd-base-danger), white calc(var(--sd-modifier-100) * 100%));
+  --sd-danger-muted: color-mix(in srgb, var(--sd-base-danger), white calc(var(--sd-modifier-200) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-danger-bg-300: color-mix(in srgb, var(--sd-base-danger), white calc(var(--sd-modifier-300) * 100%));
+  --sd-danger-soft: color-mix(in srgb, var(--sd-base-danger), white calc(var(--sd-modifier-400) * 100%));
+  --sd-danger-default: var(--sd-base-danger);
+  --sd-danger-hover: color-mix(in srgb, var(--sd-base-danger), black calc(var(--sd-modifier-600) * 100%));
+  --sd-danger-fg-650: color-mix(in srgb, var(--sd-base-danger), black calc(var(--sd-modifier-650) * 100%));
+  --sd-danger-active: color-mix(in srgb, var(--sd-base-danger), black calc(var(--sd-modifier-700) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-danger-fg-800: color-mix(in srgb, var(--sd-base-danger), black calc(var(--sd-modifier-800) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-danger-fg-900: color-mix(in srgb, var(--sd-base-danger), black calc(var(--sd-modifier-900) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-danger-fg-925: color-mix(in srgb, var(--sd-base-danger), black calc(var(--sd-modifier-925) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-danger-fg-950: color-mix(in srgb, var(--sd-base-danger), black calc(var(--sd-modifier-950) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-danger-fg-990: color-mix(in srgb, var(--sd-base-danger), black calc(var(--sd-modifier-990) * 100%));
+  --sd-danger-on-accent: var(--sd-base-white);
+  --sd-danger-on-container: var(--sd-base-danger);
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #D91528
+   */
+  --sd-danger-container-fixed: color-mix(in srgb, var(--sd-base-danger), white calc(var(--sd-modifier-25) * 100%));
+  --sd-warning-container-muted: color-mix(in srgb, var(--sd-base-warning), white calc(var(--sd-modifier-10) * 100%));
+  --sd-warning-container-soft: color-mix(in srgb, var(--sd-base-warning), white calc(var(--sd-modifier-25) * 100%));
+  --sd-warning-container-default: color-mix(in srgb, var(--sd-base-warning), white calc(var(--sd-modifier-50) * 100%));
+  --sd-warning-container-hover: color-mix(in srgb, var(--sd-base-warning), white calc(var(--sd-modifier-75) * 100%));
+  --sd-warning-container-active: color-mix(in srgb, var(--sd-base-warning), white calc(var(--sd-modifier-100) * 100%));
+  --sd-warning-muted: color-mix(in srgb, var(--sd-base-warning), white calc(var(--sd-modifier-200) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-warning-bg-300: color-mix(in srgb, var(--sd-base-warning), white calc(var(--sd-modifier-300) * 100%));
+  --sd-warning-soft: color-mix(in srgb, var(--sd-base-warning), white calc(var(--sd-modifier-400) * 100%));
+  --sd-warning-default: var(--sd-base-warning);
+  --sd-warning-hover: color-mix(in srgb, var(--sd-base-warning), black calc(var(--sd-modifier-600) * 100%));
+  --sd-warning-fg-650: color-mix(in srgb, var(--sd-base-warning), black calc(var(--sd-modifier-650) * 100%));
+  --sd-warning-active: color-mix(in srgb, var(--sd-base-warning), black calc(var(--sd-modifier-700) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-warning-fg-800: color-mix(in srgb, var(--sd-base-warning), black calc(var(--sd-modifier-800) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-warning-fg-900: color-mix(in srgb, var(--sd-base-warning), black calc(var(--sd-modifier-900) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-warning-fg-925: color-mix(in srgb, var(--sd-base-warning), black calc(var(--sd-modifier-925) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-warning-fg-950: color-mix(in srgb, var(--sd-base-warning), black calc(var(--sd-modifier-950) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-warning-fg-990: color-mix(in srgb, var(--sd-base-warning), black calc(var(--sd-modifier-990) * 100%));
+  --sd-warning-on-accent: var(--sd-base-white);
+  --sd-warning-on-container: var(--sd-base-warning);
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #F29100
+   */
+  --sd-warning-container-fixed: color-mix(in srgb, var(--sd-base-warning), white calc(var(--sd-modifier-25) * 100%));
+  --sd-neutral-container-muted: color-mix(in srgb, var(--sd-base-neutral), white calc(var(--sd-modifier-10) * 100%));
+  --sd-neutral-container-soft: color-mix(in srgb, var(--sd-base-neutral), white calc(var(--sd-modifier-25) * 100%));
+  --sd-neutral-container-default: color-mix(in srgb, var(--sd-base-neutral), white calc(var(--sd-modifier-50) * 100%));
+  --sd-neutral-container-hover: color-mix(in srgb, var(--sd-base-neutral), white calc(var(--sd-modifier-75) * 100%));
+  --sd-neutral-container-active: color-mix(in srgb, var(--sd-base-neutral), white calc(var(--sd-modifier-100) * 100%));
+  --sd-neutral-muted: color-mix(in srgb, var(--sd-base-neutral), white calc(var(--sd-modifier-200) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-neutral-bg-300: color-mix(in srgb, var(--sd-base-neutral), white calc(var(--sd-modifier-300) * 100%));
+  --sd-neutral-soft: color-mix(in srgb, var(--sd-base-neutral), white calc(var(--sd-modifier-400) * 100%));
+  --sd-neutral-default: var(--sd-base-neutral);
+  --sd-neutral-hover: color-mix(in srgb, var(--sd-base-neutral), black calc(var(--sd-modifier-600) * 100%));
+  --sd-neutral-fg-650: color-mix(in srgb, var(--sd-base-neutral), black calc(var(--sd-modifier-650) * 100%));
+  --sd-neutral-active: color-mix(in srgb, var(--sd-base-neutral), black calc(var(--sd-modifier-700) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-neutral-fg-800: color-mix(in srgb, var(--sd-base-neutral), black calc(var(--sd-modifier-800) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-neutral-fg-900: color-mix(in srgb, var(--sd-base-neutral), black calc(var(--sd-modifier-900) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-neutral-fg-925: color-mix(in srgb, var(--sd-base-neutral), black calc(var(--sd-modifier-925) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-neutral-fg-950: color-mix(in srgb, var(--sd-base-neutral), black calc(var(--sd-modifier-950) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-neutral-fg-990: color-mix(in srgb, var(--sd-base-neutral), black calc(var(--sd-modifier-990) * 100%));
+  --sd-neutral-on-accent: var(--sd-base-white);
+  --sd-neutral-on-container: var(--sd-base-neutral);
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #445371
+   */
+  --sd-neutral-container-fixed: color-mix(in srgb, var(--sd-base-neutral), white calc(var(--sd-modifier-25) * 100%));
+  --sd-neutral-focus-double: inset 0px 0px 0px 2px var(--sd-neutral-default), inset 0px 0px 0px 4px var(--sd-neutral-on-accent);
+  --sd-neutral-focus-single: inset 0px 0px 0px 2px var(--sd-neutral-default);
+  --sd-info-container-muted: color-mix(in srgb, var(--sd-base-info), white calc(var(--sd-modifier-10) * 100%));
+  --sd-info-container-soft: color-mix(in srgb, var(--sd-base-info), white calc(var(--sd-modifier-25) * 100%));
+  --sd-info-container-default: color-mix(in srgb, var(--sd-base-info), white calc(var(--sd-modifier-50) * 100%));
+  --sd-info-container-hover: color-mix(in srgb, var(--sd-base-info), white calc(var(--sd-modifier-75) * 100%));
+  --sd-info-container-active: color-mix(in srgb, var(--sd-base-info), white calc(var(--sd-modifier-100) * 100%));
+  --sd-info-muted: color-mix(in srgb, var(--sd-base-info), white calc(var(--sd-modifier-200) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-info-bg-300: color-mix(in srgb, var(--sd-base-info), white calc(var(--sd-modifier-300) * 100%));
+  --sd-info-soft: color-mix(in srgb, var(--sd-base-info), white calc(var(--sd-modifier-400) * 100%));
+  --sd-info-default: var(--sd-base-info);
+  --sd-info-fg-650: color-mix(in srgb, var(--sd-base-info), black calc(var(--sd-modifier-650) * 100%));
+  --sd-info-hover: color-mix(in srgb, var(--sd-base-info), black calc(var(--sd-modifier-600) * 100%));
+  --sd-info-active: color-mix(in srgb, var(--sd-base-info), black calc(var(--sd-modifier-700) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-info-fg-800: color-mix(in srgb, var(--sd-base-info), black calc(var(--sd-modifier-800) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-info-fg-900: color-mix(in srgb, var(--sd-base-info), black calc(var(--sd-modifier-900) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-info-fg-925: color-mix(in srgb, var(--sd-base-info), black calc(var(--sd-modifier-925) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-info-fg-950: color-mix(in srgb, var(--sd-base-info), black calc(var(--sd-modifier-950) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-info-fg-990: color-mix(in srgb, var(--sd-base-info), black calc(var(--sd-modifier-990) * 100%));
+  --sd-info-on-accent: var(--sd-base-white);
+  --sd-info-on-container: var(--sd-base-info);
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #1998FF
+   */
+  --sd-info-container-fixed: color-mix(in srgb, var(--sd-base-info), white calc(var(--sd-modifier-25) * 100%));
+  --sd-success-container-muted: color-mix(in srgb, var(--sd-base-success), white calc(var(--sd-modifier-10) * 100%));
+  --sd-success-container-soft: color-mix(in srgb, var(--sd-base-success), white calc(var(--sd-modifier-25) * 100%));
+  --sd-success-container-default: color-mix(in srgb, var(--sd-base-success), white calc(var(--sd-modifier-50) * 100%));
+  --sd-success-container-hover: color-mix(in srgb, var(--sd-base-success), white calc(var(--sd-modifier-75) * 100%));
+  --sd-success-container-active: color-mix(in srgb, var(--sd-base-success), white calc(var(--sd-modifier-100) * 100%));
+  --sd-success-muted: color-mix(in srgb, var(--sd-base-success), white calc(var(--sd-modifier-200) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-success-bg-300: color-mix(in srgb, var(--sd-base-success), white calc(var(--sd-modifier-300) * 100%));
+  --sd-success-soft: color-mix(in srgb, var(--sd-base-success), white calc(var(--sd-modifier-400) * 100%));
+  --sd-success-default: var(--sd-base-success);
+  --sd-success-hover: color-mix(in srgb, var(--sd-base-success), black calc(var(--sd-modifier-600) * 100%));
+  --sd-success-fg-650: color-mix(in srgb, var(--sd-base-success), black calc(var(--sd-modifier-650) * 100%));
+  --sd-success-active: color-mix(in srgb, var(--sd-base-success), black calc(var(--sd-modifier-700) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-success-fg-800: color-mix(in srgb, var(--sd-base-success), black calc(var(--sd-modifier-800) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-success-fg-900: color-mix(in srgb, var(--sd-base-success), black calc(var(--sd-modifier-900) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-success-fg-925: color-mix(in srgb, var(--sd-base-success), black calc(var(--sd-modifier-925) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-success-fg-950: color-mix(in srgb, var(--sd-base-success), black calc(var(--sd-modifier-950) * 100%));
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #0055FF
+   */
+  --sd-success-fg-990: color-mix(in srgb, var(--sd-base-success), black calc(var(--sd-modifier-990) * 100%));
+  --sd-success-on-accent: var(--sd-base-white);
+  --sd-success-on-container: var(--sd-base-success);
+  /**
+   * lighten(0.95) / srgb
+   * from
+   * #019F3C
+   */
+  --sd-success-container-fixed: color-mix(in srgb, var(--sd-base-success), white calc(var(--sd-modifier-25) * 100%));
+  --sd-default-focus-double: inset 0px 0px 0px 2px var(--sd-accent-default), inset 0px 0px 0px 4px var(--sd-accent-on-accent);
+  --sd-default-focus-single: inset 0px 0px 0px 2px var(--sd-accent-default);
+}

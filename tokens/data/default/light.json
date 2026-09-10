@@ -1,0 +1,1698 @@
+{
+  "fg": {
+    "default": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.990}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "soft": {
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "muted": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.200}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "disabled": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "alpha",
+            "value": "0.5",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    }
+  },
+  "bg": {
+    "page": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "surface1": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "1",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "surface2": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.10}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "surface3": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.25}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "surface4": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.50}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "surface5": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.100}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "disabled": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "alpha",
+            "value": "0.1",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    }
+  },
+  "border": {
+    "default": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "alpha",
+            "value": "0.5",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "soft": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "alpha",
+            "value": "0.25",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "muted": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.200}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    }
+  },
+  "accent": {
+    "container-muted": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.10}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.accent}"
+    },
+    "container-soft": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.25}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.accent}"
+    },
+    "container-default": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.50}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.accent}"
+    },
+    "container-hover": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.75}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.accent}"
+    },
+    "container-active": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.100}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.accent}"
+    },
+    "muted": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.200}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.accent}"
+    },
+    "bg-300": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.300}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.accent}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "soft": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.400}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.accent}"
+    },
+    "default": {
+      "$type": "color",
+      "$value": "{base.accent}"
+    },
+    "hover": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.600}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.accent}"
+    },
+    "fg-650": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.650}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.accent}"
+    },
+    "active": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.700}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.accent}"
+    },
+    "fg-800": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.800}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.accent}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-900": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.900}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.accent}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-925": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.925}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.accent}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-950": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.950}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.accent}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-990": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.990}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.accent}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "on-accent": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "on-container": {
+      "$type": "color",
+      "$value": "{base.accent}"
+    },
+    "container-fixed": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.25}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.accent}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    }
+  },
+  "danger": {
+    "container-muted": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.10}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.danger}"
+    },
+    "container-soft": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.25}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.danger}"
+    },
+    "container-default": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.50}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.danger}"
+    },
+    "container-hover": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.75}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.danger}"
+    },
+    "container-active": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.100}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.danger}"
+    },
+    "muted": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.200}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.danger}"
+    },
+    "bg-300": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.300}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.danger}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "soft": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.400}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.danger}"
+    },
+    "default": {
+      "$type": "color",
+      "$value": "{base.danger}"
+    },
+    "hover": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.600}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.danger}"
+    },
+    "fg-650": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.650}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.danger}"
+    },
+    "active": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.700}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.danger}"
+    },
+    "fg-800": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.800}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.danger}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-900": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.900}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.danger}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-925": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.925}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.danger}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-950": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.950}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.danger}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-990": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.990}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.danger}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "on-accent": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "on-container": {
+      "$type": "color",
+      "$value": "{base.danger}"
+    },
+    "container-fixed": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.25}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.danger}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.danger}"
+    }
+  },
+  "warning": {
+    "container-muted": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.10}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.warning}"
+    },
+    "container-soft": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.25}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.warning}"
+    },
+    "container-default": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.50}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.warning}"
+    },
+    "container-hover": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.75}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.warning}"
+    },
+    "container-active": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.100}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.warning}"
+    },
+    "muted": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.200}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.warning}"
+    },
+    "bg-300": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.300}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.warning}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "soft": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.400}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.warning}"
+    },
+    "default": {
+      "$type": "color",
+      "$value": "{base.warning}"
+    },
+    "hover": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.600}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.warning}"
+    },
+    "fg-650": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.650}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.warning}"
+    },
+    "active": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.700}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.warning}"
+    },
+    "fg-800": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.800}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.warning}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-900": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.900}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.warning}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-925": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.925}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.warning}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-950": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.950}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.warning}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-990": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.990}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.warning}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "on-accent": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "on-container": {
+      "$type": "color",
+      "$value": "{base.warning}"
+    },
+    "container-fixed": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.25}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.warning}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.warning}"
+    }
+  },
+  "neutral": {
+    "container-muted": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.10}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "container-soft": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.25}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "container-default": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.50}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "container-hover": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.75}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "container-active": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.100}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "muted": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.200}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "bg-300": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.300}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "soft": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.400}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "default": {
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "hover": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.600}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "fg-650": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.650}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "active": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.700}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "fg-800": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.800}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-900": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.900}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-925": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.925}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-950": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.950}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-990": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.990}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "on-accent": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "on-container": {
+      "$type": "color",
+      "$value": "{base.neutral}"
+    },
+    "container-fixed": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.25}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.neutral}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.neutral}"
+    },
+    "focus": {
+      "double": {
+        "$type": "boxShadow",
+        "$value": [
+          {
+            "x": "0",
+            "y": "0",
+            "blur": "0",
+            "spread": "2",
+            "color": "{neutral.default}",
+            "type": "innerShadow"
+          },
+          {
+            "x": "0",
+            "y": "0",
+            "blur": "0",
+            "spread": "4",
+            "color": "{neutral.on-accent}",
+            "type": "innerShadow"
+          }
+        ]
+      },
+      "single": {
+        "$type": "boxShadow",
+        "$value": [
+          {
+            "x": "0",
+            "y": "0",
+            "blur": "0",
+            "spread": "2",
+            "color": "{neutral.default}",
+            "type": "innerShadow"
+          }
+        ]
+      }
+    }
+  },
+  "info": {
+    "container-muted": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.10}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.info}"
+    },
+    "container-soft": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.25}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.info}"
+    },
+    "container-default": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.50}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.info}"
+    },
+    "container-hover": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.75}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.info}"
+    },
+    "container-active": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.100}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.info}"
+    },
+    "muted": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.200}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.info}"
+    },
+    "bg-300": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.300}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.info}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "soft": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.400}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.info}"
+    },
+    "default": {
+      "$type": "color",
+      "$value": "{base.info}"
+    },
+    "fg-650": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.650}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.info}"
+    },
+    "hover": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.600}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.info}"
+    },
+    "active": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.700}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.info}"
+    },
+    "fg-800": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.800}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.info}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-900": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.900}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.info}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-925": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.925}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.info}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-950": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.950}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.info}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-990": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.990}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.info}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "on-accent": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "on-container": {
+      "$type": "color",
+      "$value": "{base.info}"
+    },
+    "container-fixed": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.25}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.info}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.info}"
+    }
+  },
+  "success": {
+    "container-muted": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.10}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.success}"
+    },
+    "container-soft": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.25}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.success}"
+    },
+    "container-default": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.50}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.success}"
+    },
+    "container-hover": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.75}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.success}"
+    },
+    "container-active": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.100}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.success}"
+    },
+    "muted": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.200}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.success}"
+    },
+    "bg-300": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.300}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.success}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "soft": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.400}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.success}"
+    },
+    "default": {
+      "$type": "color",
+      "$value": "{base.success}"
+    },
+    "hover": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.600}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.success}"
+    },
+    "fg-650": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.650}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.success}"
+    },
+    "active": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.700}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.success}"
+    },
+    "fg-800": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.800}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.success}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-900": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.900}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.success}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-925": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.925}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.success}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-950": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.950}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.success}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "fg-990": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "darken",
+            "value": "{modifier.990}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.success}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.accent}"
+    },
+    "on-accent": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "on-container": {
+      "$type": "color",
+      "$value": "{base.success}"
+    },
+    "container-fixed": {
+      "$extensions": {
+        "studio.tokens": {
+          "modify": {
+            "type": "lighten",
+            "value": "{modifier.25}",
+            "space": "srgb"
+          }
+        }
+      },
+      "$type": "color",
+      "$value": "{base.success}",
+      "$description": "lighten({modifier.25}) / srgb\nfrom\n{base.success}"
+    }
+  },
+  "default": {
+    "focus": {
+      "double": {
+        "$type": "boxShadow",
+        "$value": [
+          {
+            "x": "0",
+            "y": "0",
+            "blur": "0",
+            "spread": "2",
+            "color": "{accent.default}",
+            "type": "innerShadow"
+          },
+          {
+            "x": "0",
+            "y": "0",
+            "blur": "0",
+            "spread": "4",
+            "color": "{accent.on-accent}",
+            "type": "innerShadow"
+          }
+        ]
+      },
+      "single": {
+        "$type": "boxShadow",
+        "$value": [
+          {
+            "x": "0",
+            "y": "0",
+            "blur": "0",
+            "spread": "2",
+            "color": "{accent.default}",
+            "type": "innerShadow"
+          }
+        ]
+      }
+    }
+  }
+}

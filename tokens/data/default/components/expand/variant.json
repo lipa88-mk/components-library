@@ -1,0 +1,54 @@
+{
+  "expand": {
+    "default": {
+      "bg": {
+        "closed": {
+          "$type": "color",
+          "$value": "{base.none}",
+          "$description": "transparent"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{neutral.container-default}",
+          "$description": "and focus"
+        },
+        "open": {
+          "$type": "color",
+          "$value": "{neutral.container-soft}"
+        }
+      },
+      "border": {
+        "default": {
+          "$type": "color",
+          "$value": "{border.soft}"
+        },
+        "focus": {
+          "$type": "color",
+          "$value": "{accent.muted}"
+        }
+      },
+      "text": {
+        "default": {
+          "$type": "color",
+          "$value": "{fg.default}"
+        }
+      },
+      "icon": {
+        "default": {
+          "$type": "color",
+          "$value": "{fg.soft}"
+        }
+      }
+    }
+  },
+  "helperText": {
+    "default": {
+      "text": {
+        "default": {
+          "$type": "color",
+          "$value": "{fg.default}"
+        }
+      }
+    }
+  }
+}

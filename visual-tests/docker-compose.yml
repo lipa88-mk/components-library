@@ -1,0 +1,10 @@
+services:
+    visual-tests:
+        build: .
+        entrypoint: /bin/sh
+        command: '/home/pptruser/visual-tests/entrypoint.sh'
+        volumes:
+            - ../:/home/pptruser:ro
+            - ../jest/__image_snapshots__:/home/pptruser/jest/__image_snapshots__/:rw
+        cap_add:
+            - SYS_ADMIN

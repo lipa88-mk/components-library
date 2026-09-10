@@ -1,0 +1,352 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Theming architecture" />
+
+# Theming architecture
+
+This document explains **how** the theming layer of the library is built and **why** it is
+designed the way it is. For usage instructions (how to consume the theme in an app) see the
+**Theming/Docs** page.
+
+---
+
+## 1. Why this exists
+
+The theming layer was built to solve two concrete problems:
+
+1. **Colour variability for components.** Every component is styled from a small, shared set of
+   semantic colour roles (`accent`, `neutral`, `success`, `warning`, `danger`, `info`, plus
+   foreground / background / border roles). Changing one "seed" colour must consistently
+   restyle every component that uses that role — buttons, inputs, tabs, alerts, and so on —
+   including all of its derived shades (hover, active, soft, muted, container…).
+
+2. **Live, in-product theme customisation.** One of the products consuming this library needed
+   an end user to edit theme colours _from the application UI_ (a colour picker in settings)
+   and see the result **immediately**, with no rebuild, no server round-trip, and no page
+   reload. The user drags a colour, and every shade of every component updates on the next
+   frame.
+
+A naïve token pipeline (resolve every token to a static hex at build time) satisfies (1) but
+not (2): a new palette would require re-running the token build and shipping new CSS. The
+design below keeps the **entire colour scale as a function of ~8 base colours that the browser
+evaluates at runtime**, so a palette change is just 8 CSS custom-property writes.
+
+---
+
+## 2. The pipeline at a glance
+
+```
+Figma  ──►  Tokens Studio  ──►  JSON token sets      (tokens/data/**)
+                                      │
+                                      ▼
+                        Style Dictionary v4 build     (tokens/index.mjs)
+                        + custom transforms:
+                          • css/color  / ts/color  →  transformCssColor.mjs
+                          • css/boxShadow           →  transformCssBoxShadow.mjs
+                          • ts/base-color/name, ts/css-vars
+                                      │
+             ┌────────────────────────┼─────────────────────────────┐
+             ▼                        ▼                             ▼
+   src/assets/css/_tokens-*.css   src/theming/_colors.ts    src/theming/_css-vars.ts
+   (CSS custom properties,        (base palette defaults    (base var names for the
+    values are color-mix()         used by createTheme)      runtime setProperty calls)
+    expressions, NOT hex)
+             │
+             ▼
+   src/assets/css/theme.css
+   @import _tokens-*.css  layer(theme)
+   @theme inline { --color-accent-default: var(--sd-accent-default); ... }   ← Tailwind v4 mapping
+             │
+             ▼
+   Tailwind utilities  (bg-accent-default, text-fg-muted, border-border-soft, shadow-single …)
+             │
+             ▼
+   Components  (tailwind-variants recipes in each ui/*/variants.ts)
+             ▲
+             │  at runtime
+   ThemeProvider sets  --sd-base-accent / --sd-base-neutral / …  on <html> (or on a
+   nested [data-theme-override] element) and toggles  data-theme="light|dark"
+```
+
+Everything above `theme.css` runs **at build time** (`npm run tokens`). Everything from
+`theme.css` down is plain CSS that ships in the package. The only thing that changes at
+**runtime** is the value of the `--sd-base-*` custom properties (and the `data-theme`
+attribute).
+
+---
+
+## 3. Layer 1 — Design tokens (Figma → Tokens Studio → JSON)
+
+Source of truth: **`tokens/data/`**, exported by the
+[Tokens Studio](https://tokens.studio/) Figma plugin.
+
+| File                                            | Purpose                                                                                                                                                                                                                         |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `tokens/data/$metadata.json`                    | `tokenSetOrder` — the order token sets are merged in.                                                                                                                                                                           |
+| `tokens/data/$themes.json`                      | Theme definitions. Each entry has a `name` (`default`, `light`, `dark`) and `selectedTokenSets` (which sets are `enabled` / `source` / `disabled` for that theme). Also carries `$figmaStyleReferences` (ignored by the build). |
+| `tokens/data/default/base.json`                 | Non-colour primitives: `modifier.*` scale, font families / weights / sizes, `border-radius.base`, `shadow.none`.                                                                                                                |
+| `tokens/data/default/light.json`, `dark.json`   | Semantic colour roles for each mode, expressed as **references + modifiers** (see below).                                                                                                                                       |
+| `tokens/data/default/components/*/variant.json` | Per-component token overrides (button, input, checkbox, radio, switch, textarea, expand, tabbedview, helperText, labelify).                                                                                                     |
+
+### Base colours vs. derived colours
+
+Only a handful of tokens hold a literal colour value — the **base colours** (category `base`):
+
+```
+base.black   #000
+base.white   #fff
+base.accent  #0055FF   ← seed for the whole accent scale
+base.neutral #445371
+base.success #019F3C
+base.warning #F29100
+base.danger  #D91528
+base.info    #1998FF
+```
+
+Every other colour token is **derived** from a base colour via a reference and an optional
+Tokens Studio _modifier_. Example from `light.json`:
+
+```jsonc
+"fg": {
+  "default": {
+    "$type": "color",
+    "$value": "{base.neutral}",
+    "$extensions": {
+      "studio.tokens": {
+        "modify": { "type": "darken", "value": "{modifier.990}", "space": "srgb" }
+      }
+    }
+  }
+}
+```
+
+Read as: _"foreground/default is `base.neutral`, darkened by `modifier.990` (0.8) in sRGB."_
+Modifier types used in this repo: `lighten`, `darken`, `alpha`.
+
+---
+
+## 4. Layer 2 — Style Dictionary v4 build (`tokens/index.mjs`)
+
+Run with:
+
+```bash
+npm run tokens
+```
+
+The script reads `$themes.json`, and for **each theme** builds a Style Dictionary instance
+whose `source` is the set of enabled token-set JSON files. `preprocessors: ['tokens-studio']`
+(from `@tokens-studio/sd-transforms`) normalises the Tokens Studio format.
+
+It then emits several **platforms** (outputs). All generated files carry a
+`Do not edit directly` header and **are committed to the repo** — `npm run tokens` is
+idempotent, so regenerating on a clean checkout produces no diff.
+
+### 4.1 The key idea: emit `color-mix()`, not hex
+
+The custom **`css/color`** and **`ts/color`** transforms (`tokens/transformCssColor.mjs`) are
+what make runtime theming possible. Instead of resolving a reference + modifier down to a
+static hex, they emit a CSS
+[`color-mix()`](https://developer.mozilla.org/docs/Web/CSS/color_value/color-mix) expression
+that **keeps `var(--sd-base-*)` and `var(--sd-modifier-*)` as live references**:
+
+| Modifier in Tokens Studio    | Emitted CSS value                                                 |
+| ---------------------------- | ----------------------------------------------------------------- |
+| `lighten` by `m`             | `color-mix(in srgb, <value>, white calc(<m> * 100%))`             |
+| `darken` by `m`              | `color-mix(in srgb, <value>, black calc(<m> * 100%))`             |
+| `alpha` `a`                  | `color-mix(in srgb, <value>, transparent calc((1 - <a>) * 100%))` |
+| no modifier, plain reference | `var(--sd-<path>)`                                                |
+
+`<value>` and `<m>` are themselves recursively resolved: a plain `{base.neutral}` becomes
+`var(--sd-base-neutral)`, `{modifier.990}` becomes `var(--sd-modifier-990)`
+(`replaceReferenceByCssVariable` in `tokens/helpers.mjs`). `transitive: true` lets the
+transform run on references-to-references.
+
+So `fg.default` from the example above is generated as:
+
+```css
+--sd-fg-default: color-mix(in srgb, var(--sd-base-neutral), black calc(var(--sd-modifier-990) * 100%));
+```
+
+Nothing in this string is a fixed colour. Change `--sd-base-neutral` and the browser
+re-evaluates the mix. Every shade in `_tokens-light.css` / `_tokens-dark.css` is like this —
+the two files are effectively a _formula sheet_ keyed off 8 base colours and the modifier
+scale.
+
+The **`css/boxShadow`** transform (`tokens/transformCssBoxShadow.mjs`) does the analogous job
+for shadow tokens: it expands the Tokens Studio shadow object(s) into a CSS shadow string and
+keeps colour references as `var(--sd-*)`.
+
+### 4.2 Platforms / outputs
+
+| Platform         | File(s)                                      | Notes                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ---------------- | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `css`            | `src/assets/css/_tokens-<theme>.css`         | `format: css/variables`. For `default` the selector is `:root`; for `light` / `dark` it is `:root[data-theme="<theme>"], :root[data-theme="<theme>"] [data-theme-override]` (so nested overrides work — see §6). `filter` keeps `default` free of `base` colours, and keeps `light` / `dark` free of the core categories (`base`, `modifier`, `font`, `border-radius`, `shadow`) that already live in `_tokens-default.css`. |
+| `ts/colors`      | `src/theming/_colors.ts`                     | `filter: isBaseColor`. ES module exporting the 8 base colours as hex strings — the **default palette** consumed by `createTheme`.                                                                                                                                                                                                                                                                                            |
+| `ts/css-vars`    | `src/theming/_css-vars.ts`                   | `filter: isBaseColor`. Exports the base custom-property **names** (`baseAccent = "--sd-base-accent"` …). These are the exact properties `ThemeProvider` writes at runtime, re-exported from the package as `themeCssVars`.                                                                                                                                                                                                   |
+| `ts/tokens-docs` | `src/theming/docs/Tokens/_tokens-<theme>.ts` | Full resolved token maps used only by the Storybook "Tokens" page.                                                                                                                                                                                                                                                                                                                                                           |
+
+Note the consequence of the `filter`s: **`--sd-base-*` custom properties are never written to a
+CSS file.** They only exist at runtime, injected by `ThemeProvider` (or set by hand). Without
+a `ThemeProvider` (or a manual `--sd-base-*` declaration) the `color-mix()` expressions have no
+input. That is why the Storybook preview and every consuming app must render a `ThemeProvider`.
+
+---
+
+## 5. Layer 3 — Tailwind v4 mapping (`src/assets/css/theme.css`)
+
+`theme.css` is the single stylesheet the package exposes for consumers
+(`import 'components-library/theme.css'`). It does two things:
+
+```css
+/* 1. Pull in the generated custom properties, in the low-priority "theme" cascade layer
+      so app styles can always win. */
+@import './_tokens-default.css' layer(theme);
+@import './_tokens-dark.css' layer(theme);
+@import './_tokens-light.css' layer(theme);
+
+/* 2. Map the library's semantic vars onto Tailwind v4 theme tokens. */
+@theme inline {
+    --color-accent-default: var(--sd-accent-default);
+    --color-fg-muted: var(--sd-fg-muted);
+    --color-bg-surface1: var(--sd-bg-surface1);
+    --color-border-soft: var(--sd-border-soft);
+    --shadow-single: var(--sd-default-focus-single);
+    /* …every role × every variant… */
+}
+```
+
+- **`@theme inline`** (Tailwind v4, CSS-first config) generates the utility classes
+  (`bg-accent-default`, `text-fg-muted`, `border-border-soft`, `shadow-single`, …). `inline`
+  means Tailwind substitutes the _right-hand side_ (`var(--sd-accent-default)`) directly into
+  each utility instead of copying the resolved colour, so the utilities stay bound to the live
+  custom property — essential for runtime theming.
+- The `--sd-*` → `--color-*` indirection is deliberate: the generated token names
+  (`--sd-accent-default`) are an implementation detail of the pipeline; the `--color-*` names
+  are the stable Tailwind-facing API. It also lets `theme.css` expose a curated subset.
+
+Components never hard-code colours. Each `src/ui/<component>/variants.ts` is a
+`tailwind-variants` recipe built from these semantic utilities.
+
+`theme.css` also contains a small `@layer base` / `@layer components` block for
+checkbox/radio SVG check marks, the Headless UI portal root `z-index`, and the
+`animate-spin-slow` keyframe helper.
+
+---
+
+## 6. Layer 4 — Runtime (`ThemeProvider`, hooks)
+
+### 6.1 `createTheme`
+
+```ts
+createTheme({ mode: 'light', palette: { accent: 'green' } });
+// → { mode: 'light', palette: { ...defaultsFrom_colors.ts, accent: 'green' } }
+```
+
+A `Theme` is just `{ mode, palette }`. `palette` is a flat `Record<string, string>` keyed by
+the base-colour names from `_colors.ts` (`accent`, `neutral`, `success`, …); values may be any
+CSS colour (`'green'`, `'#0055FF'`, `'oklch(...)'`).
+
+### 6.2 `ThemeProvider`
+
+On mount and whenever `theme` changes it does two independent things:
+
+1. **Mode → attribute.** For a top-level provider it sets `data-theme="light"` or
+   `data-theme="dark"` on `document.documentElement`. For `mode: 'system'` it reads
+   `matchMedia('(prefers-color-scheme: dark)')` and subscribes to changes. This attribute is
+   what activates the `:root[data-theme="…"]` rules from `_tokens-light.css` / `_tokens-dark.css`.
+
+2. **Palette → CSS custom properties.** In a `useLayoutEffect` it iterates the palette and calls
+   `root.style.setProperty('--sd-base-' + key, value)`. For a top-level provider `root` is
+   `document.documentElement`; for a nested provider `root` is the provider's own wrapper
+   `<div>` (see §6.4). This is the ~8-writes-per-palette-change operation that drives live
+   theming — because every `color-mix()` in the token CSS references these properties, the
+   browser recomputes the whole scale with no rebuild.
+
+    (A short `isReady` gate delays rendering children until the first `setProperty` pass has
+    run, to avoid a flash of un-themed content.)
+
+### 6.3 Hooks
+
+| Hook                                | Returns                 | Use                                                                                                                                                                      |
+| ----------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `useThemeMode()`                    | `[mode, setMode]`       | Toggle light/dark. `setMode` is a no-op (with a console warning) inside a nested provider.                                                                               |
+| `useThemePalette()`                 | `[palette, setPalette]` | **The live-customisation entry point.** Wire `setPalette` to a colour picker; each call re-renders the provider, which re-runs the `setProperty` pass.                   |
+| `useTheme()`                        | `theme`                 | Read the current `{ mode, palette }`.                                                                                                                                    |
+| `useThemeNestingLevel()`            | `number`                | `-1` outside any provider, `0` at the top provider, `1+` when nested.                                                                                                    |
+| `useThemableElementRef({ enable })` | `ref`                   | Attach to an element to mark it `data-theme-override` so it (and its subtree) can receive a nested palette. Used internally by components and by `ThemeProvider` itself. |
+
+Typical live-theming wiring:
+
+```tsx
+const [palette, setPalette] = useThemePalette();
+
+<ColorPicker value={palette.accent} onChange={hex => setPalette(p => ({ ...p, accent: hex }))} />;
+// every accent-* shade of every component updates on the next frame
+```
+
+### 6.4 Nested themes
+
+Wrapping a subtree in a second `ThemeProvider` renders a `<div ref={themableElementRef}>` with
+`data-theme-override="true"`. The generated selectors
+`:root[data-theme="light"] [data-theme-override]` re-declare all the `--sd-*` semantic
+properties on that element, and the nested provider writes its palette's `--sd-base-*` there
+instead of on `<html>`. The subtree therefore gets its own base colours while inheriting the
+mode. Nested providers cannot change mode.
+
+### 6.5 Per-element escape hatch
+
+Because everything bottoms out in custom properties, a single element can be re-themed inline
+without any provider:
+
+```tsx
+<Button.Import style={{ '--sd-base-accent': 'purple' } as CSSProperties}>Purple</Button.Import>
+```
+
+---
+
+## 7. Why the design holds together
+
+- **One seed → whole scale.** A component role like "accent hover" is
+  `color-mix(in srgb, var(--sd-base-accent), black calc(var(--sd-modifier-600) * 100%))`.
+  Set `--sd-base-accent` once and hover/active/soft/muted/container shades all follow, in both
+  light and dark, for every component — no per-shade tokens to keep in sync.
+- **Runtime cost is tiny.** A palette change crosses the JS↔CSS boundary as ~8
+  `style.setProperty` calls. No diffing, no re-render of CSS, no network. The browser's
+  `color-mix()` does the rest.
+- **Build output is static and cache-friendly.** `theme.css` + `_tokens-*.css` never change
+  between palettes, so they cache well and the package stays small.
+- **Design stays in Figma.** Structural changes (new roles, new modifier steps, new
+  components) are made in Tokens Studio and flow through `npm run tokens`; the committed
+  generated files make the diff reviewable.
+
+---
+
+## 8. Changing tokens — workflow
+
+1. Edit tokens in Figma via the Tokens Studio plugin.
+2. Export / sync the plugin's JSON into `tokens/data/` (keep the `default/…` folder layout and
+   `$themes.json` / `$metadata.json` in sync).
+3. Run `npm run tokens`.
+4. Review and commit **both** the `tokens/data/**` changes and the regenerated files
+   (`src/assets/css/_tokens-*.css`, `src/theming/_colors.ts`, `src/theming/_css-vars.ts`,
+   `src/theming/docs/Tokens/_tokens-*.ts`).
+5. If you added a new semantic role, also map it in `src/assets/css/theme.css` under
+   `@theme inline` so a Tailwind utility is generated for it.
+
+> The generated files are excluded from Prettier and are not auto-formatted; regenerate rather
+> than hand-editing.
+
+---
+
+## 9. Gotchas
+
+- **`color-mix()` support.** The whole scheme relies on CSS `color-mix()`
+  ([Baseline 2023](https://developer.mozilla.org/docs/Web/CSS/color_value/color-mix)). Very old
+  browsers will not render derived colours.
+- **A `ThemeProvider` is mandatory.** `--sd-base-*` properties exist only at runtime; without a
+  provider (or a manual declaration) derived colours resolve to nothing.
+- **`data-theme` lives on `<html>`.** SSR / static export should set it early to avoid a
+  light-mode flash before hydration.
+- **`_tokens-default.css` holds the non-colour primitives** (modifier scale, fonts,
+  `border-radius.base`, `shadow.none`) on bare `:root`; the light/dark files intentionally omit
+  those categories.

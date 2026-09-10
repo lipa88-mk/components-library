@@ -1,0 +1,5 @@
+# Run: git config --local blame.ignoreRevsFile .git-blame-ignore-revs
+# To make git blame ignore following commits:
+
+# Prettier global reformat
+329bbc7bc8597493e8590482cb7109c7ecf42a58

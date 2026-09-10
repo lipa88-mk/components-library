@@ -1,0 +1,11 @@
+/* removes standard arrows on number fields */
+input[type='number'].no-integer-arrows::-webkit-inner-spin-button,
+input[type='number'].no-integer-arrows::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'].no-integer-arrows {
+    -moz-appearance: textfield;
+    appearance: none;
+}

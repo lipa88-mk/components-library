@@ -1,0 +1,34 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --sd-modifier-10: 0.97; /** lighten */
+  --sd-modifier-25: 0.95; /** lighten */
+  --sd-modifier-50: 0.9; /** lighten */
+  --sd-modifier-75: 0.83; /** lighten */
+  --sd-modifier-100: 0.75; /** lighten */
+  --sd-modifier-200: 0.5; /** lighten */
+  --sd-modifier-300: 0.35; /** lighten */
+  --sd-modifier-400: 0.2; /** lighten */
+  --sd-modifier-600: 0.15; /** darken */
+  --sd-modifier-650: 0.225; /** darken */
+  --sd-modifier-700: 0.3; /** darken */
+  --sd-modifier-800: 0.4; /** darken */
+  --sd-modifier-900: 0.5; /** darken */
+  --sd-modifier-925: 0.57; /** darken */
+  --sd-modifier-950: 0.65; /** darken */
+  --sd-modifier-990: 0.8; /** darken */
+  --sd-font-family-base: Manrope; /** Basic font family */
+  --sd-font-family-display: Manrope; /** Гарнитура для display типографики */
+  --sd-font-family-heading: Manrope; /** Гарнитура для heading типографики */
+  --sd-font-family-body: Manrope; /** Гарнитура для body типографики */
+  --sd-font-family-description: Manrope; /** Гарнитура для description типографики */
+  --sd-font-weight-bold: 800; /** Font weight for bold styles */
+  --sd-font-weight-semibold: 600; /** Font weight for bold or medium weights */
+  --sd-font-weight-regular: 400; /** Font weight for normal styles */
+  --sd-font-size-base: 16; /** The base value from which the font-sizes scale is calculated */
+  --sd-font-line-height-base: 16; /** The base value from which the line-height scale is calculated */
+  --sd-border-radius-base: 6; /** The base value from which the rounding scale is calculated */
+  --sd-shadow-none: inset 0px 0px 0px 0px var(--sd-base-none); /** Token for the value none. Used in Figma, since even with none the token must be assigned. When transforming tokens from json to CSS, the variables are replaced with none */
+}

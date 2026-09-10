@@ -1,0 +1,54 @@
+{
+  "textarea": {
+    "default": {
+      "bg": {
+        "default": {
+          "$type": "color",
+          "$value": "{bg.page}"
+        },
+        "disabled": {
+          "$type": "color",
+          "$value": "{bg.disabled}"
+        }
+      },
+      "border": {
+        "default": {
+          "$type": "color",
+          "$value": "{border.soft}"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{accent.soft}"
+        },
+        "focus": {
+          "$type": "color",
+          "$value": "{accent.hover}"
+        },
+        "danger": {
+          "default": {
+            "$type": "color",
+            "$value": "{danger.soft}"
+          },
+          "hover": {
+            "$type": "color",
+            "$value": "{danger.soft}"
+          },
+          "focus": {
+            "$type": "color",
+            "$value": "{danger.hover}"
+          }
+        }
+      },
+      "text": {
+        "default": {
+          "$type": "color",
+          "$value": "{fg.default}"
+        },
+        "placeholder": {
+          "$type": "color",
+          "$value": "{fg.muted}"
+        }
+      }
+    }
+  }
+}

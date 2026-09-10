@@ -1,0 +1,108 @@
+{
+  "switch": {
+    "primary": {
+      "track": {
+        "bg": {
+          "color": {
+            "default": {
+              "$type": "color",
+              "$value": "{border.soft}",
+              "$description": "Bg color in fedault state"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{border.default}",
+              "$description": "Bg color of track in hover state"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{base.none}",
+              "$description": "Bg color of track in disabled state"
+            },
+            "focus": {
+              "$type": "color",
+              "$value": "{accent.container-default}",
+              "$description": "ring"
+            },
+            "checked": {
+              "default": {
+                "$type": "color",
+                "$value": "{accent.default}",
+                "$description": "Bg color of track in checked state"
+              },
+              "hover": {
+                "$type": "color",
+                "$value": "{accent.hover}",
+                "$description": "Bg color of checked track in hover state"
+              }
+            },
+            "danger": {
+              "default": {
+                "$type": "color",
+                "$value": "{danger.container-default}"
+              },
+              "hover": {
+                "$type": "color",
+                "$value": "{danger.container-hover}"
+              },
+              "focus": {
+                "$type": "color",
+                "$value": "{danger.container-default}",
+                "$description": "ring"
+              },
+              "checked": {
+                "default": {
+                  "$type": "color",
+                  "$value": "{danger.default}"
+                },
+                "hover": {
+                  "$type": "color",
+                  "$value": "{danger.hover}"
+                }
+              }
+            }
+          }
+        },
+        "border": {
+          "color": {
+            "disabled": {
+              "$type": "color",
+              "$value": "{border.soft}",
+              "$description": "Border color of track in disabled state"
+            }
+          }
+        }
+      },
+      "label": {
+        "color": {
+          "default": {
+            "description": "",
+            "$type": "color",
+            "$value": "{fg.default}"
+          },
+          "disabled": {
+            "description": "",
+            "$type": "color",
+            "$value": "{fg.disabled}"
+          }
+        }
+      },
+      "knob": {
+        "bg": {
+          "color": {
+            "default": {
+              "$type": "color",
+              "$value": "{base.white}",
+              "$description": "Bg color of the handle at default state"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{bg.disabled}",
+              "$description": "Bg color of the handle at default state"
+            }
+          }
+        }
+      }
+    }
+  }
+}
