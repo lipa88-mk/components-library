@@ -1,5 +1,6 @@
 # Components Library
 
+[![CI](https://github.com/lipa88-mk/components-library/actions/workflows/ci.yml/badge.svg)](https://github.com/lipa88-mk/components-library/actions/workflows/ci.yml)
 [![Deploy Storybook](https://github.com/lipa88-mk/components-library/actions/workflows/deploy-storybook.yml/badge.svg)](https://github.com/lipa88-mk/components-library/actions/workflows/deploy-storybook.yml)
 
 A React UI component library built with Tailwind CSS v4 and documented in Storybook. It ships

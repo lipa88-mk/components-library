@@ -15,7 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - CI: GitHub Actions workflow (`.github/workflows/deploy-storybook.yml`) that builds Storybook
   and publishes it to GitHub Pages on every push to `main`, hosted at
   <https://lipa88-mk.github.io/components-library/>.
-- README: link to the hosted Storybook and a deploy status badge.
+- CI: GitHub Actions workflow (`.github/workflows/ci.yml`) running lint, typecheck,
+  format check, a design-token drift check, the library build, and unit tests on every
+  pull request and push to `main`.
+- README: links to the hosted Storybook and CI / deploy status badges.
 - `.editorconfig`; this changelog.
 
 ### Changed
@@ -23,6 +26,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dependency refresh within existing majors: `@typescript-eslint/*` 8.70, `@headlessui/react`
   2.2.10, `@floating-ui/react` 0.27.20, Storybook 8.6.18.
 - `@types/luxon` aligned to the v2 runtime (`^2.4.0`).
+- Test runner: raised the Jest timeout to 120s and modernized the `@swc/jest` target
+  (`es5` → `es2022`) so the slow Headless UI / Floating UI interaction specs pass on shared CI
+  runners; `test:ci` now runs with `--maxWorkers=2`.
 
 ## [0.0.1]
 
