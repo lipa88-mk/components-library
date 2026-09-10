@@ -19,6 +19,9 @@ describe('Picker', () => {
         expect(option).toBeInTheDocument();
     });
 
+    // Two full userEvent click cycles on the heavy Select component (Headless UI +
+    // Floating UI) through jsdom are slow and blow past the 30s global timeout on
+    // slower CI runners; give this interaction extra headroom.
     it('should trigger onChange function when item selected', async () => {
         const fn = jest.fn();
         render(
@@ -36,7 +39,7 @@ describe('Picker', () => {
         await userEvent.click(option);
 
         expect(fn).toHaveBeenCalledWith('first row value');
-    });
+    }, 60_000);
 
     it('should filter through values', async () => {
         render(
