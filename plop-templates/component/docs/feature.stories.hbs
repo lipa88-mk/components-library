@@ -1,0 +1,21 @@
+import React from 'react';
+import type { Meta, StoryFn } from '@storybook/react';
+import type { {{pascalCase name}}Props } from '../{{pascalCase name}}';
+import { {{pascalCase name}} } from '../{{pascalCase name}}';
+import { args, argTypes } from './config';
+
+const meta: Meta<typeof {{pascalCase name}}> = {
+    title: 'Components/{{pascalCase name}}/Features',
+    tags: ['!autodocs'],
+    component: {{pascalCase name}},
+    args,
+    argTypes,
+};
+
+export default meta;
+
+export const Feature1: StoryFn<{{pascalCase name}}Props> = (props) => <{{pascalCase name}} {...props} />;
+
+Feature1.parameters = {
+    controls: {},
+};

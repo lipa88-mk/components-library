@@ -1,0 +1,17 @@
+{
+  "tokenSetOrder": [
+    "default/base",
+    "default/light",
+    "default/dark",
+    "default/components/button/variant",
+    "default/components/helperText/variant",
+    "default/components/labelify/variant",
+    "default/components/expand/variant",
+    "default/components/tabbedview/variant",
+    "default/components/radio/variant",
+    "default/components/checkbox/variant",
+    "default/components/switch/variant",
+    "default/components/input/variant",
+    "default/components/textarea/variant"
+  ]
+}

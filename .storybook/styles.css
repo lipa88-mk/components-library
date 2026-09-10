@@ -1,0 +1,21 @@
+@import url('https://rsms.me/inter/inter.css');
+@import 'tailwindcss';
+@import '../src/assets/css/theme.css';
+
+@theme {
+    --font-sans: 'Inter', system-ui, ui-sans-serif, sans-serif;
+}
+
+/* https://github.com/storybookjs/storybook/issues/21597 */
+.css-qa4clq.css-qa4clq :where(h2:not(.sb-anchor, .sb-unstyled, .sb-unstyled h2)):first-of-type {
+    margin-top: revert;
+    padding-top: revert;
+}
+
+:root {
+    @apply bg-bg-page;
+}
+
+.sbdocs-preview {
+    @apply bg-bg-page;
+}

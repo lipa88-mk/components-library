@@ -1,0 +1,12 @@
+{
+  "labelify": {
+    "default": {
+      "text": {
+        "default": {
+          "$type": "color",
+          "$value": "{fg.default}"
+        }
+      }
+    }
+  }
+}

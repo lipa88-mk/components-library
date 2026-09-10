@@ -1,0 +1,12 @@
+{
+  "helperText": {
+    "default": {
+      "text": {
+        "default": {
+          "$type": "color",
+          "$value": "{fg.default}"
+        }
+      }
+    }
+  }
+}

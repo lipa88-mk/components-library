@@ -1,0 +1,15 @@
+import React from 'react';
+import { Meta, StoryFn } from '@storybook/react';
+import { {{pascalCase name}}Props, {{pascalCase name}} } from '../{{pascalCase name}}';
+import { args, argTypes } from './config';
+
+const meta: Meta<typeof {{pascalCase name}}> = {
+    title: 'Components/{{pascalCase name}}',
+    component: {{pascalCase name}},
+    argTypes,
+    args,
+};
+
+export const Playground: StoryFn<{{pascalCase name}}Props> = (props) => <{{pascalCase name}} {...props} />;
+
+export default meta;

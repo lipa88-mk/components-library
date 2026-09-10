@@ -1,0 +1,49 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Portals usage" />
+
+# Portals usage
+
+> **Note:**
+> Currently, `components-library` uses `@headlessui/react`, which does not support changing the portal root.
+> This requires applying the zIndex property to two different portals.
+
+This component library uses `@floating-ui` library. Therefore, the following components are rendered inside portals:
+
+- Tooltip
+- MultiSelect
+- Select
+
+<br />
+
+## 1. Import PortalProvider
+
+To ensure proper rendering, you need to import the `PortalProvider` from `components-library` and add it to your root application file and pass z-index property:
+
+```typescript jsx
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { PortalProvider } from 'components-library';
+
+const App = () => {
+    return (
+        <div>
+            <PortalProvider zIndex={30} />
+        </div>
+    );
+};
+
+const root = createRoot(document.querySelector('#root')!);
+root.render(<App />);
+```
+
+## 2. Add z-index for the headless-ui portal
+
+In cases where components use `@headlessui/react` and render children within a Portal, ensure the `z-index` **is smaller (or set to -1) compared to the PortalProvider**:
+
+```css
+#headlessui-portal-root {
+    position: relative;
+    z-index: 29;
+}
+```

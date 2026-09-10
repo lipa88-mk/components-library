@@ -1,0 +1,152 @@
+@import './_tokens-default.css' layer(theme);
+@import './_tokens-dark.css' layer(theme);
+@import './_tokens-light.css' layer(theme);
+
+@theme inline {
+    --font-sans: 'Inter', system-ui, ui-sans-serif, sans-serif;
+
+    --shadow-single: var(--sd-default-focus-single);
+    --shadow-double: var(--sd-default-focus-double);
+
+    --color-fg-default: var(--sd-fg-default);
+    --color-fg-soft: var(--sd-fg-soft);
+    --color-fg-muted: var(--sd-fg-muted);
+    --color-fg-disabled: var(--sd-fg-disabled);
+
+    --color-bg-page: var(--sd-bg-page);
+    --color-bg-surface1: var(--sd-bg-surface1);
+    --color-bg-surface2: var(--sd-bg-surface2);
+    --color-bg-surface3: var(--sd-bg-surface3);
+    --color-bg-surface4: var(--sd-bg-surface4);
+    --color-bg-surface5: var(--sd-bg-surface5);
+    --color-bg-disabled: var(--sd-bg-disabled);
+
+    --color-border-default: var(--sd-border-default);
+    --color-border-soft: var(--sd-border-soft);
+    --color-border-muted: var(--sd-border-muted);
+
+    --color-accent-default: var(--sd-accent-default);
+    --color-accent-soft: var(--sd-accent-soft);
+    --color-accent-muted: var(--sd-accent-muted);
+    --color-accent-hover: var(--sd-accent-hover);
+    --color-accent-active: var(--sd-accent-active);
+    --color-accent-fg-text: var(--sd-accent-on-accent);
+    --color-accent-container-default: var(--sd-accent-container-default);
+    --color-accent-container-soft: var(--sd-accent-container-soft);
+    --color-accent-container-muted: var(--sd-accent-container-muted);
+    --color-accent-container-hover: var(--sd-accent-container-hover);
+    --color-accent-container-active: var(--sd-accent-container-active);
+    --color-accent-on-container: var(--sd-accent-on-container);
+    --color-accent-container-fixed: var(--sd-accent-container-fixed);
+
+    --color-neutral-default: var(--sd-neutral-default);
+    --color-neutral-soft: var(--sd-neutral-soft);
+    --color-neutral-muted: var(--sd-neutral-muted);
+    --color-neutral-hover: var(--sd-neutral-hover);
+    --color-neutral-active: var(--sd-neutral-active);
+    --color-neutral-fg-text: var(--sd-neutral-on-accent);
+    --color-neutral-container-default: var(--sd-neutral-container-default);
+    --color-neutral-container-soft: var(--sd-neutral-container-soft);
+    --color-neutral-container-muted: var(--sd-neutral-container-muted);
+    --color-neutral-container-hover: var(--sd-neutral-container-hover);
+    --color-neutral-container-active: var(--sd-neutral-container-active);
+    --color-neutral-on-container: var(--sd-neutral-on-container);
+    --color-neutral-container-fixed: var(--sd-neutral-container-fixed);
+
+    --color-success-default: var(--sd-success-default);
+    --color-success-soft: var(--sd-success-soft);
+    --color-success-muted: var(--sd-success-muted);
+    --color-success-hover: var(--sd-success-hover);
+    --color-success-active: var(--sd-success-active);
+    --color-success-fg-text: var(--sd-success-on-accent);
+    --color-success-container-default: var(--sd-success-container-default);
+    --color-success-container-soft: var(--sd-success-container-soft);
+    --color-success-container-muted: var(--sd-success-container-muted);
+    --color-success-container-hover: var(--sd-success-container-hover);
+    --color-success-container-active: var(--sd-success-container-active);
+    --color-success-on-container: var(--sd-success-on-container);
+    --color-success-container-fixed: var(--sd-success-container-fixed);
+
+    --color-warning-default: var(--sd-warning-default);
+    --color-warning-soft: var(--sd-warning-soft);
+    --color-warning-muted: var(--sd-warning-muted);
+    --color-warning-hover: var(--sd-warning-hover);
+    --color-warning-active: var(--sd-warning-active);
+    --color-warning-fg-text: var(--sd-warning-on-accent);
+    --color-warning-container-default: var(--sd-warning-container-default);
+    --color-warning-container-soft: var(--sd-warning-container-soft);
+    --color-warning-container-muted: var(--sd-warning-container-muted);
+    --color-warning-container-hover: var(--sd-warning-container-hover);
+    --color-warning-container-active: var(--sd-warning-container-active);
+    --color-warning-on-container: var(--sd-warning-on-container);
+    --color-warning-container-fixed: var(--sd-warning-container-fixed);
+
+    --color-danger-default: var(--sd-danger-default);
+    --color-danger-soft: var(--sd-danger-soft);
+    --color-danger-muted: var(--sd-danger-muted);
+    --color-danger-hover: var(--sd-danger-hover);
+    --color-danger-active: var(--sd-danger-active);
+    --color-danger-fg-text: var(--sd-danger-on-accent);
+    --color-danger-container-default: var(--sd-danger-container-default);
+    --color-danger-container-soft: var(--sd-danger-container-soft);
+    --color-danger-container-muted: var(--sd-danger-container-muted);
+    --color-danger-container-hover: var(--sd-danger-container-hover);
+    --color-danger-container-active: var(--sd-danger-container-active);
+    --color-danger-on-container: var(--sd-danger-on-container);
+    --color-danger-container-fixed: var(--sd-danger-container-fixed);
+
+    --color-info-default: var(--sd-info-default);
+    --color-info-soft: var(--sd-info-soft);
+    --color-info-muted: var(--sd-info-muted);
+    --color-info-hover: var(--sd-info-hover);
+    --color-info-active: var(--sd-info-active);
+    --color-info-fg-text: var(--sd-info-on-accent);
+    --color-info-container-default: var(--sd-info-container-default);
+    --color-info-container-soft: var(--sd-info-container-soft);
+    --color-info-container-muted: var(--sd-info-container-muted);
+    --color-info-container-hover: var(--sd-info-container-hover);
+    --color-info-container-active: var(--sd-info-container-active);
+    --color-info-on-container: var(--sd-info-on-container);
+    --color-info-container-fixed: var(--sd-info-container-fixed);
+}
+
+@layer base {
+    #headlessui-portal-root {
+        position: relative;
+        z-index: 30;
+    }
+
+    [type='checkbox']:checked {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+    }
+    [type='checkbox']:indeterminate {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e");
+        background-color: currentColor;
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    @media (forced-colors: active) {
+        [type='checkbox']:checked {
+            -webkit-appearance: auto;
+            -moz-appearance: auto;
+            appearance: auto;
+        }
+    }
+    [type='radio']:checked {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+    }
+    @media (forced-colors: active) {
+        [type='radio']:checked {
+            -webkit-appearance: auto;
+            -moz-appearance: auto;
+            appearance: auto;
+        }
+    }
+}
+
+@layer components {
+    .animate-spin-slow {
+        animation: spin 1s steps(8) infinite;
+    }
+}

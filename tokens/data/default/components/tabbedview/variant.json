@@ -1,0 +1,70 @@
+{
+  "tabbedview": {
+    "primary": {
+      "label": {
+        "default": {
+          "$type": "color",
+          "$value": "{fg.soft}"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{accent.default}"
+        },
+        "focus": {
+          "$type": "color",
+          "$value": "{fg.default}"
+        },
+        "selected": {
+          "$type": "color",
+          "$value": "{accent.hover}"
+        },
+        "disabled": {
+          "$type": "color",
+          "$value": "{fg.disabled}"
+        }
+      },
+      "icon": {
+        "default": {
+          "$type": "color",
+          "$value": "{fg.soft}"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{accent.default}"
+        },
+        "focus": {
+          "$type": "color",
+          "$value": "{fg.default}"
+        },
+        "selected": {
+          "$type": "color",
+          "$value": "{accent.hover}"
+        },
+        "disabled": {
+          "$type": "color",
+          "$value": "{fg.disabled}"
+        }
+      },
+      "border": {
+        "default": {
+          "$type": "color",
+          "$value": "{base.none}"
+        },
+        "focus": {
+          "$type": "color",
+          "$value": "{accent.default}"
+        },
+        "selected": {
+          "$type": "color",
+          "$value": "{accent.hover}"
+        },
+        "nav": {
+          "default": {
+            "$type": "color",
+            "$value": "{border.soft}"
+          }
+        }
+      }
+    }
+  }
+}

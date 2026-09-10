@@ -1,0 +1,159 @@
+import { Meta } from '@storybook/blocks';
+
+import * as Theming from './Theming.stories';
+
+<Meta of={Theming} />
+
+# Theming
+
+Theming allows you to customize the look and feel of your application by defining a set of colors and styles. This guide will help you understand how to set up and use theming in your application.
+
+## Use the Tailwind theme
+
+This library is built with Tailwind CSS v4 (CSS-first configuration). Import the published theme
+stylesheet in your global CSS so the design tokens and utilities are available to your app:
+
+```css
+@import 'tailwindcss';
+@import 'components-library/theme.css';
+```
+
+## ThemeProvider
+
+First, create a theme using the `createTheme` function. This function allows you to specify various theme properties, such as the color mode (“light”, “dark”, or “system”).
+
+Next, use the `ThemeProvider` component to apply the theme to your application. Wrap your main component (or the part of your application where you want the theme to be applied) with the `ThemeProvider`.
+
+```typescript jsx
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { PortalProvider, ThemeProvider, createTheme } from 'components-library';
+
+const theme = createTheme({
+    mode: 'light',
+    // customize default colors if needed
+    palette: {
+        accent: 'green',
+    },
+});
+
+const App = () => {
+    return (
+        <ThemeProvider theme={theme}>
+            <PortalProvider zIndex={30} />
+        </ThemeProvider>
+    );
+};
+
+const root = createRoot(document.querySelector('#root')!);
+root.render(<App />);
+```
+
+## Nested themes
+
+Nested theming allows you to apply different themes to different parts of your application. This is useful for creating distinct styles for specific components or sections within your app.
+
+```typescript jsx
+import { createTheme, ThemeProvider, Button } from 'components-library';
+
+const outerTheme = createTheme({
+    palette: {
+        accent: '#0055FF',
+    },
+});
+
+const innerTheme = createTheme({
+    palette: {
+        accent: '#FFAA00',
+    },
+});
+
+const App = () => {
+    return (
+        <ThemeProvider theme={outerTheme}>
+            <Button.Primary>Button</Button.Primary>
+            <ThemeProvider theme={innerTheme}>
+                <Button.Primary>Button</Button.Primary>
+            </ThemeProvider>
+        </ThemeProvider>
+    );
+};
+
+export default App;
+```
+
+## Theming Hooks
+
+### useThemableElementRef
+
+This hook returns a ref that can be used to apply a theme override to an HTML element.
+
+### Parameters
+
+- `options` (optional): An object with the following properties:
+- `enable` (boolean): Whether to enable the theme override. Defaults to `true`.
+
+### Returns
+
+- `ref`: A ref object to be attached to an HTML element.
+
+```typescript jsx
+const MyComponent = () => {
+    const ref = useThemableElementRef({ enable: true });
+    return <div ref={ref}>Themed Element</div>;
+};
+```
+
+### useThemeNestingLevel
+
+This hook returns the current nesting level of the theme context.
+
+### Returns
+
+- `nestingLevel`: The current nesting level.
+
+```jsx
+const nestingLevel = useThemeNestingLevel();
+console.log(nestingLevel); // Outputs the current nesting level
+```
+
+### useThemeMode
+
+This hook returns the current theme mode and a function to update it.
+
+### Returns
+
+- `themeMode`: The current theme mode.
+- `setThemeMode`: A function to update the theme mode.
+
+```jsx
+const [themeMode, setThemeMode] = useThemeMode();
+
+const toggleThemeMode = () => {
+    setThemeMode(prevMode => (prevMode === 'light' ? 'dark' : 'light'));
+};
+
+return <button onClick={toggleThemeMode}>Toggle Theme Mode</button>;
+```
+
+### useThemePalette
+
+This hook returns the current theme palette and a function to update it.
+
+### Returns
+
+- `themePalette`: The current theme palette.
+- `setThemePalette`: A function to update the theme palette.
+
+```jsx
+const [themePalette, setThemePalette] = useThemePalette();
+
+const changePalette = () => {
+    setThemePalette(prevPalette => ({
+        ...prevPalette,
+        primary: 'blue',
+    }));
+};
+
+return <button onClick={changePalette}>Change Palette</button>;
+```

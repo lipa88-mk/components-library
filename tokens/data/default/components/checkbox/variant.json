@@ -1,0 +1,106 @@
+{
+  "radio": {
+    "bg": {
+      "default": {
+        "color": {
+          "default": {
+            "$type": "color",
+            "$value": "{bg.page}"
+          },
+          "disabled": {
+            "$type": "color",
+            "$value": "{bg.disabled}"
+          },
+          "checked": {
+            "default": {
+              "$type": "color",
+              "$value": "{accent.default}"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{accent.hover}"
+            },
+            "focus": {
+              "$type": "color",
+              "$value": "{accent.container-default}",
+              "$description": "ring"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{bg.disabled}"
+            }
+          }
+        }
+      },
+      "danger": {
+        "color": {
+          "default": {
+            "$type": "color",
+            "$value": "{bg.page}"
+          },
+          "disabled": {
+            "$type": "color",
+            "$value": "{bg.disabled}"
+          },
+          "checked": {
+            "default": {
+              "$type": "color",
+              "$value": "{danger.default}"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{danger.hover}"
+            },
+            "focus": {
+              "$type": "color",
+              "$value": "{danger.container-default}",
+              "$description": "ring"
+            }
+          }
+        }
+      }
+    },
+    "border": {
+      "default": {
+        "default": {
+          "$type": "color",
+          "$value": "{border.soft}"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{accent.soft}"
+        }
+      },
+      "danger": {
+        "default": {
+          "$type": "color",
+          "$value": "{danger.soft}"
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{danger.hover}"
+        }
+      }
+    },
+    "label": {
+      "default": {
+        "$type": "color",
+        "$value": "{fg.default}"
+      },
+      "disabled": {
+        "$type": "color",
+        "$value": "{fg.disabled}"
+      }
+    },
+    "description": {
+      "default": {
+        "$type": "color",
+        "$value": "{fg.muted}"
+      },
+      "disabled": {
+        "$type": "color",
+        "$value": "{fg.disabled}"
+      }
+    }
+  }
+}

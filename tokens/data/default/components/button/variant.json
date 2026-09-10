@@ -1,0 +1,468 @@
+{
+  "button": {
+    "default": {
+      "primary": {
+        "bg": {
+          "color": {
+            "default": {
+              "$type": "color",
+              "$value": "{accent.default}",
+              "$description": "Background in default state"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{accent.hover}",
+              "$description": "Background color on hover and focus"
+            },
+            "active": {
+              "$type": "color",
+              "$value": "{accent.active}",
+              "$description": "Background color when active (pressed)"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{bg.disabled}",
+              "$description": "Background color when disabled"
+            }
+          }
+        },
+        "text": {
+          "color": {
+            "default": {
+              "$type": "color",
+              "$value": "{accent.on-accent}",
+              "$description": "Text and icon color in default state"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{accent.on-accent}",
+              "$description": "Text and icon color in hover and focus states"
+            },
+            "active": {
+              "$type": "color",
+              "$value": "{accent.on-accent}",
+              "$description": "Text and icon color in active (pressed) state"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{fg.disabled}",
+              "$description": "Text and icon color in disabled state"
+            }
+          }
+        }
+      },
+      "secondary": {
+        "bg": {
+          "color": {
+            "default": {
+              "$type": "color",
+              "$value": "{accent.container-default}",
+              "$description": "Background color in default state"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{accent.container-hover}",
+              "$description": "Background color in hover and focus state"
+            },
+            "active": {
+              "$type": "color",
+              "$value": "{accent.container-active}",
+              "$description": "Background color in active (pressed) state"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{bg.disabled}",
+              "$description": "Background color at disabled state"
+            }
+          }
+        },
+        "text": {
+          "color": {
+            "default": {
+              "$type": "color",
+              "$value": "{accent.on-container}",
+              "$description": "Text and icon color in default state"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{accent.hover}",
+              "$description": "Text and icon color in hover and focus states"
+            },
+            "active": {
+              "$type": "color",
+              "$value": "{accent.hover}",
+              "$description": "Text and icon color in active (pressed) state"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{fg.disabled}",
+              "$description": "Text and icon color in disabled state"
+            }
+          }
+        }
+      },
+      "tertiary": {
+        "bg": {
+          "color": {
+            "default": {
+              "$type": "color",
+              "$value": "{base.none}",
+              "$description": "Background color in default state"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{accent.container-default}",
+              "$description": "Background color on hover and focus"
+            },
+            "active": {
+              "$type": "color",
+              "$value": "{accent.container-hover}",
+              "$description": "Background color when active (pressed)"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{base.none}",
+              "$description": "Background color when disabled"
+            }
+          }
+        },
+        "border": {
+          "color": {
+            "default": {
+              "$type": "color",
+              "$value": "{accent.muted}",
+              "$description": "Border color in default state"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{accent.soft}",
+              "$description": "Border color in hover and focus states"
+            },
+            "active": {
+              "$type": "color",
+              "$value": "{accent.soft}",
+              "$description": "Border color in active (pressed) state"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{border.muted}",
+              "$description": "Border color in disabled state"
+            }
+          }
+        },
+        "text": {
+          "color": {
+            "default": {
+              "$type": "color",
+              "$value": "{accent.default}",
+              "$description": "Text and icon color in default state"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{accent.hover}",
+              "$description": "Text and icon color in hover and focus states"
+            },
+            "active": {
+              "$type": "color",
+              "$value": "{accent.hover}",
+              "$description": "Text and icon color in active (pressed) state"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{fg.disabled}",
+              "$description": "Text and icon color in disabled state"
+            }
+          }
+        }
+      },
+      "ghost": {
+        "bg": {
+          "color": {
+            "default": {
+              "$type": "color",
+              "$value": "{base.none}",
+              "$description": "Background color in default state"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{accent.container-default}",
+              "$description": "Background color on hover and focus"
+            },
+            "active": {
+              "$type": "color",
+              "$value": "{accent.container-hover}",
+              "$description": "Background color when active (pressed)"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{base.none}",
+              "$description": "Background color when disabled"
+            }
+          }
+        },
+        "text": {
+          "color": {
+            "default": {
+              "$type": "color",
+              "$value": "{accent.default}",
+              "$description": "Text and icon color in default state"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{accent.hover}",
+              "$description": "Text and icon color in hover and focus states"
+            },
+            "active": {
+              "$type": "color",
+              "$value": "{accent.hover}",
+              "$description": "Text and icon color in active (pressed) state"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{fg.disabled}",
+              "$description": "Text and icon color in disabled state"
+            }
+          }
+        }
+      },
+      "focus": {
+        "color": {
+          "$type": "boxShadow",
+          "$value": "{default.focus.double}"
+        }
+      }
+    },
+    "neutral": {
+      "primary": {
+        "bg": {
+          "color": {
+            "default": {
+              "$type": "color",
+              "$value": "{neutral.default}",
+              "$description": "Background in default state"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{neutral.hover}",
+              "$description": "Background color on hover and focus"
+            },
+            "active": {
+              "$type": "color",
+              "$value": "{neutral.active}",
+              "$description": "Background color when active (pressed)"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{bg.disabled}",
+              "$description": "Background color when disabled"
+            }
+          }
+        },
+        "text": {
+          "color": {
+            "default": {
+              "$type": "color",
+              "$value": "{neutral.on-accent}",
+              "$description": "Text and icon color in default state"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{neutral.on-accent}",
+              "$description": "Text and icon color in hover and focus states"
+            },
+            "active": {
+              "$type": "color",
+              "$value": "{neutral.on-accent}",
+              "$description": "Text and icon color in active (pressed) state"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{fg.disabled}",
+              "$description": "Text and icon color in disabled state"
+            }
+          }
+        }
+      },
+      "secondary": {
+        "bg": {
+          "color": {
+            "default": {
+              "$type": "color",
+              "$value": "{neutral.container-default}",
+              "$description": "Background color in default state"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{neutral.container-hover}",
+              "$description": "Background color in hover and focus state"
+            },
+            "active": {
+              "$type": "color",
+              "$value": "{neutral.container-active}",
+              "$description": "Background color in active (pressed) state"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{bg.disabled}",
+              "$description": "Background color at disabled state"
+            }
+          }
+        },
+        "text": {
+          "color": {
+            "default": {
+              "$type": "color",
+              "$value": "{neutral.on-container}",
+              "$description": "Text and icon color in default state"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{neutral.hover}",
+              "$description": "Text and icon color in hover and focus states"
+            },
+            "active": {
+              "$type": "color",
+              "$value": "{neutral.hover}",
+              "$description": "Text and icon color in active (pressed) state"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{fg.disabled}",
+              "$description": "Text and icon color in disabled state"
+            }
+          }
+        }
+      },
+      "tertiary": {
+        "bg": {
+          "color": {
+            "default": {
+              "$type": "color",
+              "$value": "{base.none}",
+              "$description": "Background color in default state"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{neutral.container-default}",
+              "$description": "Background color on hover and focus"
+            },
+            "active": {
+              "$type": "color",
+              "$value": "{neutral.container-hover}",
+              "$description": "Background color when active (pressed)"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{base.none}",
+              "$description": "Background color when disabled"
+            }
+          }
+        },
+        "border": {
+          "color": {
+            "default": {
+              "$type": "color",
+              "$value": "{neutral.muted}",
+              "$description": "Border color in default state"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{neutral.soft}",
+              "$description": "Border color in hover and focus states"
+            },
+            "active": {
+              "$type": "color",
+              "$value": "{neutral.soft}",
+              "$description": "Border color in active (pressed) state"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{border.muted}",
+              "$description": "Border color in disabled state"
+            }
+          }
+        },
+        "text": {
+          "color": {
+            "default": {
+              "$type": "color",
+              "$value": "{neutral.default}",
+              "$description": "Text and icon color in default state"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{neutral.hover}",
+              "$description": "Text and icon color in hover and focus states"
+            },
+            "active": {
+              "$type": "color",
+              "$value": "{neutral.hover}",
+              "$description": "Text and icon color in active (pressed) state"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{fg.disabled}",
+              "$description": "Text and icon color in disabled state"
+            }
+          }
+        }
+      },
+      "ghost": {
+        "bg": {
+          "color": {
+            "default": {
+              "$type": "color",
+              "$value": "{base.none}",
+              "$description": "Background color in default state"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{neutral.container-default}",
+              "$description": "Background color on hover and focus"
+            },
+            "active": {
+              "$type": "color",
+              "$value": "{neutral.container-hover}",
+              "$description": "Background color when active (pressed)"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{base.none}",
+              "$description": "Background color when disabled"
+            }
+          }
+        },
+        "text": {
+          "color": {
+            "default": {
+              "$type": "color",
+              "$value": "{neutral.default}",
+              "$description": "Text and icon color in default state"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{neutral.hover}",
+              "$description": "Text and icon color in hover and focus states"
+            },
+            "active": {
+              "$type": "color",
+              "$value": "{neutral.hover}",
+              "$description": "Text and icon color in active (pressed) state"
+            },
+            "disabled": {
+              "$type": "color",
+              "$value": "{fg.disabled}",
+              "$description": "Text and icon color in disabled state"
+            }
+          }
+        }
+      },
+      "focus": {
+        "color": {
+          "$type": "boxShadow",
+          "$value": "{neutral.focus.double}"
+        }
+      }
+    }
+  }
+}
