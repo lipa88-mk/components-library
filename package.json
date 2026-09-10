@@ -35,7 +35,7 @@
     "scripts": {
         "prepare": "husky",
         "test": "jest",
-        "test:ci": "jest --coverage --reporters=default --reporters=jest-junit --ci",
+        "test:ci": "jest --coverage --reporters=default --reporters=jest-junit --ci --maxWorkers=2",
         "test:visual": "./visual-tests/docker-run.sh",
         "test:visual:ci": "./visual-tests/entrypoint.sh",
         "storybook": "storybook dev -p 6006",

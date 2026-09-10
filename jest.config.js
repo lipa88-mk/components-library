@@ -3,12 +3,15 @@ const path = require('path');
 module.exports = {
     setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
     // Interaction tests that drive Headless UI / Floating UI dropdowns through
-    // jsdom are slow; the default 5s timeout is too tight for them.
-    testTimeout: 30000,
+    // jsdom are slow (5-20s each locally), and shared CI runners are several
+    // times slower; the default 5s timeout is far too tight for them.
+    testTimeout: 120000,
     testMatch: ['<rootDir>/src/**/*.{spec,test}.{ts,tsx}'],
     testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/src/.*\\.visual\\.(spec|test)\\.(ts|tsx)$'],
     transform: {
-        '^.+\\.(j|t)sx?$': ['@swc/jest', { jsc: { target: 'es5' } }],
+        // Tests run on Node >= 20 (jsdom); compile to a modern target so async
+        // functions etc. are not downleveled to slow regenerator state machines.
+        '^.+\\.(j|t)sx?$': ['@swc/jest', { jsc: { target: 'es2022' } }],
     },
     testEnvironment: 'jsdom',
     moduleNameMapper: {

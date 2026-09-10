@@ -26,6 +26,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dependency refresh within existing majors: `@typescript-eslint/*` 8.70, `@headlessui/react`
   2.2.10, `@floating-ui/react` 0.27.20, Storybook 8.6.18.
 - `@types/luxon` aligned to the v2 runtime (`^2.4.0`).
+- Test runner: raised the Jest timeout to 120s and modernized the `@swc/jest` target
+  (`es5` → `es2022`) so the slow Headless UI / Floating UI interaction specs pass on shared CI
+  runners; `test:ci` now runs with `--maxWorkers=2`.
 
 ## [0.0.1]
 
