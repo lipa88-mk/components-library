@@ -7,8 +7,9 @@
     "author": "Maria Korshunova",
     "repository": {
         "type": "git",
-        "url": "https://github.com/mariakorsh/components-library.git"
+        "url": "https://github.com/lipa88-mk/components-library.git"
     },
+    "homepage": "https://lipa88-mk.github.io/components-library/",
     "engines": {
         "node": ">=20"
     },

@@ -1,7 +1,11 @@
 # Components Library
 
+[![Deploy Storybook](https://github.com/lipa88-mk/components-library/actions/workflows/deploy-storybook.yml/badge.svg)](https://github.com/lipa88-mk/components-library/actions/workflows/deploy-storybook.yml)
+
 A React UI component library built with Tailwind CSS v4 and documented in Storybook. It ships
 ready-to-use components (buttons, inputs, selects, tabs, alerts, tooltips, etc.), a theming layer with light/dark design tokens, and a set of [JSON Forms](https://jsonforms.io/) renderers.
+
+**[Browse the component library in Storybook →](https://lipa88-mk.github.io/components-library/)**
 
 ## Requirements
 
@@ -50,21 +54,24 @@ npm run build
 
 ## Scripts
 
-| Script                    | Description                                       |
-| ------------------------- | ------------------------------------------------- |
-| `npm run storybook`       | Start Storybook in dev mode                       |
-| `npm run storybook:build` | Build the static Storybook site                   |
-| `npm run build`           | Build the library (ESM + UMD + type declarations) |
-| `npm test`                | Run unit tests (Jest + Testing Library)           |
-| `npm run typecheck`       | Type-check the project with `tsc`                 |
-| `npm run lint`            | Lint with ESLint                                  |
-| `npm run tokens`          | Regenerate design tokens from `tokens/data`       |
-| `npm run plop`            | Scaffold a new component                          |
+| Script                    | Description                                 |
+| ------------------------- | ------------------------------------------- |
+| `npm run storybook`       | Start Storybook in dev mode                 |
+| `npm run storybook:build` | Build the static Storybook site             |
+| `npm run build`           | Build the library (ESM + type declarations) |
+| `npm test`                | Run unit tests (Jest + Testing Library)     |
+| `npm run typecheck`       | Type-check the project with `tsc`           |
+| `npm run lint`            | Lint with ESLint                            |
+| `npm run format`          | Format the repo with Prettier               |
+| `npm run format:check`    | Check formatting without writing            |
+| `npm run tokens`          | Regenerate design tokens from `tokens/data` |
+| `npm run plop`            | Scaffold a new component                    |
 
 ## Documentation
 
-The component documentation lives in Storybook. Start it with `npm run storybook` and browse the
-sidebar:
+The component documentation lives in Storybook. A build is published to GitHub Pages on every
+push to `main`: <https://lipa88-mk.github.io/components-library/>. Run it locally with
+`npm run storybook` and browse the sidebar:
 
 - **Introduction** – this page
 - **Components** – every component with live examples and prop tables
