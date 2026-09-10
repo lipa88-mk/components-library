@@ -30,10 +30,10 @@ jobs:
             HUSKY: '0' # skip "prepare": "husky" during npm ci in CI
         steps:
             - name: Checkout
-              uses: actions/checkout@v4
+              uses: actions/checkout@v5
 
             - name: Set up Node
-              uses: actions/setup-node@v4
+              uses: actions/setup-node@v5
               with:
                   node-version-file: .nvmrc # pins Node 20, same as local dev
                   cache: npm # caches ~/.npm keyed on package-lock.json
@@ -42,13 +42,13 @@ jobs:
               run: npm ci # reads .npmrc -> legacy-peer-deps honoured
 
             - name: Configure GitHub Pages
-              uses: actions/configure-pages@v5
+              uses: actions/configure-pages@v6
 
             - name: Build Storybook
               run: npm run storybook:build # -> storybook-static/
 
             - name: Upload Pages artifact
-              uses: actions/upload-pages-artifact@v3
+              uses: actions/upload-pages-artifact@v5
               with:
                   path: storybook-static # action default is _site/, must override
 
@@ -61,4 +61,4 @@ jobs:
         steps:
             - name: Deploy to GitHub Pages
               id: deployment
-              uses: actions/deploy-pages@v4
+              uses: actions/deploy-pages@v5
