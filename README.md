@@ -13,6 +13,11 @@ ready-to-use components (buttons, inputs, selects, tabs, alerts, tooltips, etc.)
 - Node.js >= 20
 - npm
 
+## Stack
+
+React 18 · TypeScript · Tailwind CSS v4 · Storybook · Style Dictionary ·
+Vite · Jest · Testing Library · Puppeteer · ESLint · Prettier · Husky
+
 Peer dependencies (provided by the host app):
 
 - `react` ^18 and `react-dom` ^18
